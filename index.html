@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111514">
+  <meta name="description" content="Carepath patient care dashboard preview.">
+  <title>Carepath — My Health Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-frame">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#" aria-label="Carepath home"><span class="brand-symbol">C</span></a>
+    <nav class="rail-nav" aria-label="Main navigation">
+      <button class="rail-item active" data-view="overview" aria-label="Overview" title="Overview">⌂</button>
+      <button class="rail-item" data-view="exercise" aria-label="Exercise plans" title="Exercise plans">▥</button>
+      <button class="rail-item" data-view="progress" aria-label="Progress" title="Progress">↗</button>
+      <button class="rail-item" data-view="diet" aria-label="Meal plan" title="Meal plan">▦</button>
+      <button class="rail-item" data-view="health" aria-label="Health records" title="Health records">♥</button>
+      <button class="rail-item" data-view="profile" aria-label="Profile" title="Profile">●</button>
+    </nav>
+    <button class="rail-item settings" data-view="settings" aria-label="Settings" title="Settings">⚙</button>
+  </aside>
+
+  <main class="dashboard">
+    <header class="topbar">
+      <button class="mobile-menu" id="menuToggle" aria-label="Open navigation">☰</button>
+      <div class="patient-switch">
+        <div class="patient-avatar">JW</div>
+        <div><strong>Patient Dashboard</strong><small>Personal care space</small></div>
+        <span class="switch-arrow">⌄</span>
+      </div>
+      <div class="top-actions">
+        <span class="today" id="todayDate">Today</span>
+        <button class="round-action" id="notificationButton" aria-label="Notifications">♟<i></i></button>
+        <button class="round-action search" aria-label="Search">⌕</button>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="heading-row">
+        <div><span class="eyebrow">YOUR HEALTH AT A GLANCE</span><h1 id="pageTitle">Body Overview</h1></div>
+        <button class="period">Monthly <span>⌄</span></button>
+      </div>
+
+      <section class="overview-grid">
+        <article class="body-card">
+          <p class="body-message">Your consistency is building <strong>healthy habits.</strong></p>
+          <p class="muted">Your wellness progress this month</p>
+          <div class="big-number">68.4 <small>kg</small></div>
+          <div class="ring-row">
+            <div class="ring-wrap"><div class="ring ring-lime"><span>72%</span></div><small>Exercise</small></div>
+            <div class="ring-wrap"><div class="ring ring-orange"><span>65%</span></div><small>Nutrition</small></div>
+            <div class="ring-wrap"><div class="ring ring-red"><span>80%</span></div><small>Hydration</small></div>
+          </div>
+          <span class="sample-label">SAMPLE DATA</span>
+        </article>
+
+        <section class="targets">
+          <div class="section-title"><h2>My Daily Target</h2><button class="subtle-link" data-view-link="health">See all</button></div>
+          <div class="target-grid">
+            <article class="target-card"><div class="target-head"><b>Water</b><span class="target-icon blue">◆</span></div><small>Total consumed</small><strong>1,600 <em>ml</em></strong><div class="meter"><i style="width:64%"></i></div></article>
+            <article class="target-card"><div class="target-head"><b>Calories</b><span class="target-icon orange">♨</span></div><small>Food log estimate</small><strong>1,450 <em>kcal</em></strong><div class="meter orange-meter"><i style="width:58%"></i></div></article>
+            <article class="target-card"><div class="target-head"><b>Weight</b><span class="target-icon lime">⚖</span></div><small>Latest record</small><strong>68.4 <em>kg</em></strong><div class="target-note">Last updated · Demo</div></article>
+            <article class="target-card"><div class="target-head"><b>Blood pressure</b><span class="target-icon red">♥</span></div><small>Latest record</small><strong>118/78 <em>mmHg</em></strong><div class="target-note">Pulse · 72 bpm</div></article>
+          </div>
+        </section>
+      </section>
+
+      <section class="activity-section">
+        <div class="section-title"><div><span class="eyebrow">KEEP YOUR ROUTINE GOING</span><h2>New Activity</h2></div><button class="subtle-link" data-view-link="progress">See all activity</button></div>
+        <div class="activity-grid">
+          <article class="activity-card water-activity"><div><h3>Drinking<br>Tracker</h3><p>Stay hydrated and log your water intake throughout the day.</p><button class="circle-arrow" data-view-link="health">→</button></div><div class="activity-art water-art">◒</div></article>
+          <article class="activity-card exercise-activity"><div><h3>Daily<br>Exercise</h3><p>Follow your assigned routine and record each completed session.</p><button class="circle-arrow" data-view-link="exercise">→</button></div><div class="activity-art exercise-art">✳</div></article>
+          <article class="activity-card sleep-activity"><div><h3>Sleep<br>Tracker</h3><p>Record your sleep duration, quality and daily energy.</p><button class="circle-arrow" data-view-link="health">→</button></div><div class="activity-art sleep-art">☾</div></article>
+        </div>
+      </section>
+
+      <section class="lower-grid">
+        <article class="white-panel">
+          <div class="section-title"><div><span class="eyebrow">YOUR CARE TEAM</span><h2>Today's care plan</h2></div><button class="subtle-link" data-view-link="exercise">View plan</button></div>
+          <div class="plan-row"><span class="plan-symbol mint-bg">✳</span><div class="plan-copy"><b>Gentle mobility routine</b><small>3 movements · 15 minutes</small></div><span class="plan-status">2 / 3 done</span></div>
+          <div class="plan-row"><span class="plan-symbol peach-bg">◒</span><div class="plan-copy"><b>Nutrition check-in</b><small>Record meals and portions</small></div><span class="plan-status">2 / 4 logged</span></div>
+          <div class="plan-row"><span class="plan-symbol blue-bg">◆</span><div class="plan-copy"><b>Hydration reminder</b><small>Daily water goal · 2.5 L</small></div><span class="plan-status">1.6 / 2.5 L</span></div>
+        </article>
+        <article class="fasting-panel">
+          <div class="section-title"><div><span class="eyebrow">MINDFUL ROUTINES</span><h2>Fasting tracker</h2></div><span class="clock-icon">◷</span></div>
+          <div class="fasting-time">00:00 <small>NOT RUNNING</small></div>
+          <p>Log a session only if it is part of the plan agreed with your care professional.</p>
+          <button class="fasting-link" data-view-link="fasting">View fasting history →</button>
+        </article>
+      </section>
+      <footer><span class="footer-mark">C</span> Carepath <span>·</span> Your health, in harmony <small>Dashboard preview · Sample values only</small></footer>
+    </div>
+  </main>
+
+  <aside class="meal-sidebar">
+    <div class="meal-heading"><h2>My Meal Plan</h2><button class="add-meal" id="addMeal" aria-label="Add meal">＋</button></div>
+    <button class="date-select"><span>▦</span><span id="mealDate">Today’s meal schedule</span><b>⌄</b></button>
+    <div class="meal-list">
+      <article class="meal-card"><div class="meal-card-head"><h3>Breakfast</h3><span>◷ &nbsp;07:00 – 09:00</span></div><div class="meal-body"><div class="food-stack"><span class="food food-a">🥣</span><span class="food food-b">🍌</span><span class="food food-c">🥚</span></div><strong>380 <small>kcal</small></strong></div><small class="meal-caption">Oats · Banana · Protein</small></article>
+      <article class="meal-card"><div class="meal-card-head"><h3>Lunch</h3><span>◷ &nbsp;12:30 – 14:00</span></div><div class="meal-body"><div class="food-stack"><span class="food food-d">🥗</span><span class="food food-e">🍚</span><span class="food food-f">🥕</span></div><strong>520 <small>kcal</small></strong></div><small class="meal-caption">Balanced plate · Vegetables · Rice</small></article>
+      <article class="meal-card"><div class="meal-card-head"><h3>Dinner</h3><span>◷ &nbsp;19:00 – 20:30</span></div><div class="meal-body"><div class="food-stack"><span class="food food-g">🥬</span><span class="food food-h">🍲</span></div><strong>420 <small>kcal</small></strong></div><small class="meal-caption">Greens · Soup · Protein</small></article>
+    </div>
+    <article class="calorie-card"><div class="calorie-heading"><h3>Nutrition Analysis</h3><button data-view-link="diet">See detail</button></div><div class="macro"><div><span>Carbohydrates</span><b>45%</b></div><i><em style="width:45%"></em></i></div><div class="macro"><div><span>Protein</span><b>30%</b></div><i class="protein-bar"><em style="width:30%"></em></i></div><div class="macro"><div><span>Fat</span><b>25%</b></div><i class="fat-bar"><em style="width:25%"></em></i></div><p>Illustrative values · Your nutritionist's plan will appear here.</p></article>
+    <div class="meal-footer">Meal adherence is recorded by you and reviewed by your care team.</div>
+  </aside>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
